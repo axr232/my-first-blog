@@ -1,25 +1,13 @@
-<html>
-    <head>
-        <title> Bridging Coursework </title>
-    </head>
-    <body>
-        <h1> Heading </h1>
-        <h2> sub-heading</h2>
-        <h3> sub-sub-heading keeps going until h6 </h3>
-        <p>Paragraph</p>
-        <em> test-em </em>
-        <strong> strong text </strong>
-        <br>
-        <a href="https://djangogirls.org">link</a>
-        <ul><li>first item</li><li>second item</li></ul>
-        <div>
-        {% for post in posts %}
-    <div>
-        <p>published: {{ post.published_date }}</p>
-        <h2><a href="">{{ post.title }}</a></h2>
+{% extends 'blog/base.html' %}
+
+{%block content%}
+{% for post in posts %}
+    <div class="post">
+        <div class="date">
+            {{ post.published_date }}
+        </div>
+        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
 {% endfor %}
-        </div>
-    </body>
-</html>
+{%endblock%}
