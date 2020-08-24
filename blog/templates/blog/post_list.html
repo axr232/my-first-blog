@@ -12,5 +12,14 @@
         <br>
         <a href="https://djangogirls.org">link</a>
         <ul><li>first item</li><li>second item</li></ul>
+        <div>
+        {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
+        </div>
     </body>
 </html>
