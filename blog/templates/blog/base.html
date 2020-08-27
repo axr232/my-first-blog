@@ -12,6 +12,8 @@
             <div class = "page-symbols">
             {% if user.is_authenticated %}
                 <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+                <a href="{% url 'cv_page' %}" class="top-menu"><span class="glyphicon glyphicon-briefcase"></span></a>
+                <a href="{% url 'post_list' %}" class="top-menu"><span class="glyphicon glyphicon-home"></span></a>
             {% endif%}
             </div>
             <h1><a href="/">Bridging Coursework Alexandru Radut</a></h1>

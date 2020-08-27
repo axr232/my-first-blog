@@ -61,3 +61,20 @@ h1, h2, h3, h4 {
     font-size: 26pt;
     margin-top: 40px;
 }
+
+.cv_page_header p{
+    white-space: nowrap;
+    margin-left: 730px;
+    font-size:16pt;
+}
+
+.cv_page_header h2{
+    white-space: nowrap;
+    margin-left: 820px;
+    font-size:32pt;
+    
+}
+
+.cv_body h3{
+    padding-bottom: 20px
+}

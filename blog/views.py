@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from .models import Post
+from .models import CV
 from django.utils import timezone
 from django.shortcuts import render,get_object_or_404
 from .forms import PostForm
+from .forms import CVForm
 from django.shortcuts import redirect
 # Create your views here.
 
@@ -18,7 +20,7 @@ def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
-            post =form.save(commit = False)
+            post = form.save(commit = False)
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
@@ -46,3 +48,21 @@ def post_delete(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.delete()
     return redirect('post_list')
+
+def cv_page(request):
+    cvForms = CV.objects
+    return render(request,'blog/cv_page.html',{'cvForms':cvForms})
+
+def cv_edit(request):
+    print("DONE!")
+    if request.method == "POST":
+        form = CVForm(request.POST)
+        if form.is_valid():
+            print("TEST2")
+            form.save()
+            return redirect('blog/cv_page.html')
+    else:
+        print("TEST")
+        form = CVForm()
+    return render(request, 'blog/cv_edit.html', {'form': form})
+
