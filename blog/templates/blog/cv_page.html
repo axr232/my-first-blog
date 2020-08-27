@@ -4,16 +4,26 @@
     <div class = "cv_page_header">
         <h2>CV</h2>
         {% if user.is_authenticated %}
-            <a class="btn btn-default" href="{% url 'cv_edit' %}"><span class="glyphicon glyphicon-pencil"></span></a>
+            <div class = "cv_edit_button">
+                <a class="btn btn-default" href="{% url 'cv_edit' %}"><span class="glyphicon glyphicon-pencil"></span></a>
+            </div>
         {% endif %}
         <p>Alexandru-Catalin Radut</p>
+        <p class = "cv_address_and_phone">
+        Address: {{cvForms.address}} <br>
+        Phone Number: {{cvForms.phone_number}}
+        </p>
     </div>
     <div class = "cv_body">
         <h3>Profile</h3>
-        {{ cvForms.text }}
+        {{ cvForms.profile }}
         <h3>Education</h3>
+        {{ cvForms.education }}
         <h3>Experience</h3>
+        {{ cvForms.experience }}
         <h3>Extra-curricular Achievements</h3>
+        {{ cvForms.extracurricular_achievements }}
         <h3>Skills and Interests</h3>
+        {{ cvForms.skills_and_interests }}
     </div>
 {% endblock %}

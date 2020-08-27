@@ -50,19 +50,23 @@ def post_delete(request, pk):
     return redirect('post_list')
 
 def cv_page(request):
-    cvForms = CV.objects
+    cvForms = CV.objects.get()
+    print("!!!!")
+    print(cvForms.profile)
+    print("!!!!")
     return render(request,'blog/cv_page.html',{'cvForms':cvForms})
 
 def cv_edit(request):
-    print("DONE!")
+    CV.objects.all().delete()
+    #print("DONE!")
     if request.method == "POST":
         form = CVForm(request.POST)
         if form.is_valid():
-            print("TEST2")
+            #print("TEST2")
             form.save()
-            return redirect('blog/cv_page.html')
+            return redirect('cv_page')
     else:
-        print("TEST")
+        #print("TEST")
         form = CVForm()
     return render(request, 'blog/cv_edit.html', {'form': form})
 

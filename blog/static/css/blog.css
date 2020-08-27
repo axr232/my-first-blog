@@ -78,3 +78,15 @@ h1, h2, h3, h4 {
 .cv_body h3{
     padding-bottom: 20px
 }
+
+p.cv_address_and_phone{
+    margin-left: 675px;
+    font-size: 12pt;
+}
+
+.cv_edit_button{
+    position:absolute;
+    right:-200px;
+    font-size: 26pt;
+    margin-top: -45px;
+}

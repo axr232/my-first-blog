@@ -12,4 +12,4 @@ class CVForm(forms.ModelForm):
     
     class Meta:
         model = CV
-        fields = ('profile','education','experience','extracurricular_achievements','skills_and_interests')
+        fields = ('address','phone_number','profile','education','experience','extracurricular_achievements','skills_and_interests')

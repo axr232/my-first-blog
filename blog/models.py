@@ -18,6 +18,8 @@ class Post(models.Model):
         return self.title
 
 class CV(models.Model):
+    address = models.CharField(max_length=300,default='N/A')
+    phone_number = models.CharField(max_length=20,default='N/A')
     profile = models.TextField()
     education = models.TextField()
     experience = models.TextField()
