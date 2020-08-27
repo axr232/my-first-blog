@@ -58,13 +58,14 @@ h1, h2, h3, h4 {
 .page-symbols{
     position:absolute;
     right:20px;
+    font-size: 26pt;
     margin-top: 40px;
 }
 
 .cv_page_header p{
     white-space: nowrap;
     margin-left: 730px;
-    /*font-size:16pt;*/
+    font-size:16pt;
 }
 
 .cv_page_header h2{
@@ -86,6 +87,6 @@ p.cv_address_and_phone{
 .cv_edit_button{
     position:absolute;
     right:-200px;
-    /*font-size: 26pt;*/
+    font-size: 26pt;
     margin-top: -45px;
 }
