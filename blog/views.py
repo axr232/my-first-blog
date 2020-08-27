@@ -57,12 +57,12 @@ def cv_page(request):
     return render(request,'blog/cv_page.html',{'cvForms':cvForms})
 
 def cv_edit(request):
-    CV.objects.all().delete()
     #print("DONE!")
     if request.method == "POST":
         form = CVForm(request.POST)
         if form.is_valid():
             #print("TEST2")
+            CV.objects.all().delete()
             form.save()
             return redirect('cv_page')
     else:
