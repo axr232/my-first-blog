@@ -20,11 +20,14 @@ class NewVisitorTest(unittest.TestCase):
         print(header_text)
         self.assertIn('CV',header_text)
         sub_header_text = self.browser.find_elements_by_tag_name('h3')
-        check_for_forms = self.browser.find_element_by_tag_name('textarea').text
-        form_list = self.browser.find_elements_by_tag_name('textarea')
+        check_for_forms = self.browser.find_element_by_id('cv_profile').text
+        form_list = self.browser.find_elements_by_tag_name('textfield')
         sub_header_check_list =["Profile","Education","Experience","Extra-curricular Achievements","Skills and Interests"]
         for i in range(len(sub_header_text)):
             self.assertEqual(sub_header_text[i].text,sub_header_check_list[i])
+        print("!!!!!!!!!!!!!!!!!!")
+        print(check_for_forms)
+        print("!!!!!!!!!!!!!!!!!!")
         for form in form_list:
             print("it works")
             form.send_keys("test!")
