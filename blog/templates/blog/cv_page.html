@@ -3,27 +3,26 @@
 {% block content %}
     <div class = "cv_page_header">
         <h2>CV</h2>
-        {% if user.is_authenticated %}
-            <div class = "cv_edit_button">
-                <a class="btn btn-default" href="{% url 'cv_edit' %}"><span class="glyphicon glyphicon-pencil"></span></a>
+            <div class = "cv_edit_button" >
+                <a id = "cv_edit_button" href="{% url 'cv_edit' %}"><span class="glyphicon glyphicon-pencil"></span></a>
             </div>
-        {% endif %}
         <p>Alexandru-Catalin Radut</p>
-        <p class = "cv_address_and_phone">
-        Address: {{cvForms.address}} <br>
-        Phone Number: {{cvForms.phone_number}}
+        <p>
+            Address: <span id = "cv_address">{{cvForms.address}} </span> <br>
+            Phone Number: <span id = "cv_phone">{{cvForms.phone_number}}</span>
         </p>
+        
     </div>
     <div class = "cv_body">
         <h3>Profile</h3>
         <div id = "cv_profile"> {{ cvForms.profile }} </div>
         <h3>Education</h3>
-        {{ cvForms.education }}
+        <div id = "cv_education">{{ cvForms.education }}</div>
         <h3>Experience</h3>
-        {{ cvForms.experience }}
+        <div id = "cv_experience">{{ cvForms.experience }}</div>
         <h3>Extra-curricular Achievements</h3>
-        {{ cvForms.extracurricular_achievements }}
+        <div id = "cv_extracurricular_achievements">{{ cvForms.extracurricular_achievements }}</div>
         <h3>Skills and Interests</h3>
-        {{ cvForms.skills_and_interests }}
+        <div id = "cv_skills_and_interests">{{ cvForms.skills_and_interests }}</div>
     </div>
 {% endblock %}
